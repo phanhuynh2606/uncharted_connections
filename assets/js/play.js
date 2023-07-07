@@ -1,18 +1,22 @@
 
 const videoContainer = document.getElementById('watchvideo');
 const playButton = document.querySelector('.button-play');
+const closeButton = document.getElementById('close-video');
 
 playButton.addEventListener('click', function () {
    videoContainer.classList.add('active');
 });
+closeButton.addEventListener('click', () => {
+  videoContainer.classList.remove('active');
+});
+// Lấy phần tử video trong iframe
+var video = document.getElementById('video').contentWindow;
 
-   const videoPlayer = document.querySelector("video");
-
-   playButton.addEventListener("click", () => {
-      videoPlayer.play();
-      document.getElementById("watchvideo").style.display = "block";
-   });
-
+// Thêm hành động khi người dùng nhấn nút play
+playButton.addEventListener("click", function() {
+  // Phát video
+  video.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+});
 // Lấy phần tử HTML liên quan đến nút điều hướng
 var toggleButton = document.querySelector(".inner-menu-mobi .button-menu");
 
@@ -26,11 +30,10 @@ toggleButton.addEventListener("click", function() {
 });
 
 // dung video
-const closeButton = document.getElementById("close-video");
-   let currentTime = 0;
+   // let currentTime = 0;
 
-   closeButton.addEventListener("click", () => {
-      currentTime = videoPlayer.currentTime;
-      videoPlayer.pause();
-      document.getElementById("watchvideo").style.display = "none";
-   });
+   // closeButton.addEventListener("click", () => {
+   //    currentTime = videoPlayer.currentTime;
+   //    videoPlayer.pause();
+   //    document.getElementById("watchvideo").style.display = "none";
+   // });
