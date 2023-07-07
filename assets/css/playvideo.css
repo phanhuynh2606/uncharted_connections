@@ -15,8 +15,8 @@
 
  #watchvideo.active .button-close {
     position: absolute;
-    top: 70px;
-    right: 15px;
+    top: 50px;
+    right: 5px;
  }
 
  #close-video {
@@ -38,27 +38,41 @@
  #close-video i {
     font-size: 30px;
  }
-@media (max-width:991.98px) {
-   #watchvideo.active .button-close {
-         top: 15px;
-         right: 5px;
-      }
-}
-@media (max-width:575.98px) {
-#close-video {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-   }
-}
- #watchvideo video {
+
+ @media (max-width:991.98px) {
+    #watchvideo.active .button-close {
+       top: 5px;
+       right: 2px;
+    }
+
+    #close-video {
+       width: 40px;
+       height: 40px;
+
+    }
+ }
+
+ @media (max-width:575.98px) {
+    #close-video {
+       width: 30px;
+       height: 30px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+
+    #watchvideo.active .button-close {
+       top: 0px;
+       right: 17px;
+    }
+ }
+
+ #watchvideo iframe {
     max-width: 80vw;
     max-height: 100vh;
  }
 
- #watchvideo video {
+ #watchvideo iframe {
     position: absolute;
     top: 50%;
     left: 50%;
