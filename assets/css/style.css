@@ -209,7 +209,27 @@
    background-position: center;
    border-radius: 50px;
 }
+@keyframes logo {
+   0% {
+      transform: translate(0, 0);
+   }
 
+   25% {
+      transform: translate(0, -20px) rotate(360deg);
+   }
+
+   50% {
+      transform: translate(0, -5px);
+   }
+
+   75% {
+      transform: translate(0, -10px) rotate(-360deg);
+   }
+
+   100% {
+      transform: translate(0, 0);
+   }
+}
 .section-home .inner-logo {
    cursor: cell;
    display: inline-flex;
@@ -219,6 +239,10 @@
    top: -25px;
    width: 80px;
    height: 80px;
+      animation-duration: 1s;
+   animation-name: logo;
+   animation-fill-mode: forwards;
+   animation-iteration-count: infinite;
    right: calc(50% - 55px);
    border: 1.17px solid;
    border-radius: 50%;
